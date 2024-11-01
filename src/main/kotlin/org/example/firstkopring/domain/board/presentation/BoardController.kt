@@ -1,7 +1,7 @@
-package org.example.firstkopring.domain.board.domain.presentation
+package org.example.firstkopring.domain.board.presentation
 
 import org.example.firstkopring.domain.board.domain.Board
-import org.example.firstkopring.domain.board.domain.presentation.dto.request.addBoardRequest
+import org.example.firstkopring.domain.board.presentation.dto.request.addBoardRequest
 import org.example.firstkopring.domain.board.sevice.DeleteBoardService
 import org.example.firstkopring.domain.board.sevice.GetAllBoardService
 import org.example.firstkopring.domain.board.sevice.GetBoardService
