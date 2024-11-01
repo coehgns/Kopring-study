@@ -10,7 +10,7 @@ import jakarta.persistence.Id
 class Board(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val Id: Long?,
+    val Id: Long? = null,
 
     @Column(name = "title", nullable = false, unique = true)
     val title: String,
