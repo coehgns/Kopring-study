@@ -1,8 +1,8 @@
-package org.example.firstkopring.domain.service
+package org.example.firstkopring.domain.user.service
 
-import org.example.firstkopring.domain.domain.User
-import org.example.firstkopring.domain.domain.repository.UserRepository
-import org.example.firstkopring.domain.presentation.dto.request.SaveUserRequest
+import org.example.firstkopring.domain.user.domain.User
+import org.example.firstkopring.domain.user.domain.repository.UserRepository
+import org.example.firstkopring.domain.user.presentation.dto.request.SaveUserRequest
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 

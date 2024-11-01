@@ -1,4 +1,4 @@
-package org.example.firstkopring.domain.presentation.dto.request
+package org.example.firstkopring.domain.user.presentation.dto.request
 
 data class SaveUserRequest(
 

@@ -1,9 +1,9 @@
-package org.example.firstkopring.domain.presentation
+package org.example.firstkopring.domain.user.presentation
 
-import org.example.firstkopring.domain.domain.User
-import org.example.firstkopring.domain.presentation.dto.request.SaveUserRequest
-import org.example.firstkopring.domain.presentation.dto.response.GetUserResponse
-import org.example.firstkopring.domain.service.UserService
+import org.example.firstkopring.domain.user.domain.User
+import org.example.firstkopring.domain.user.presentation.dto.request.SaveUserRequest
+import org.example.firstkopring.domain.user.presentation.dto.response.GetUserResponse
+import org.example.firstkopring.domain.user.service.UserService
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable

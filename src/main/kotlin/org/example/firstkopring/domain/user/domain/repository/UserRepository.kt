@@ -1,6 +1,6 @@
-package org.example.firstkopring.domain.domain.repository
+package org.example.firstkopring.domain.user.domain.repository
 
-import org.example.firstkopring.domain.domain.User
+import org.example.firstkopring.domain.user.domain.User
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
