@@ -6,7 +6,7 @@ import org.example.firstkopring.domain.board.domain.repository.BoardRepository
 import org.springframework.stereotype.Service
 
 @Service
-class addBoardService(
+class AddBoardService(
     private val boardRepository: BoardRepository
 ) {
     fun execute(addBoardRequest: AddBoardRequest) {
