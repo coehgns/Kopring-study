@@ -17,4 +17,11 @@ class Board(
 
     @Column(name = "content", nullable = true)
     val content: String
-)
+) {
+    fun modifyBoard(title: String, content: String) {
+        Board(
+            title = title,
+            content = content
+        )
+    }
+}
