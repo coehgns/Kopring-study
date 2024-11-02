@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/boards")
 class BoardController(
-    private val addBoardService: addBoardService,
+    private val addBoardService: AddBoardService,
     private val getBoardService: GetBoardService,
     private val getAllBoardService: GetAllBoardService,
     private val deleteBoardService: DeleteBoardService,
