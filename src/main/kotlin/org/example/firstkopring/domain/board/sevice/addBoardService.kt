@@ -1,7 +1,7 @@
 package org.example.firstkopring.domain.board.sevice
 
 import org.example.firstkopring.domain.board.domain.Board
-import org.example.firstkopring.domain.board.presentation.dto.request.addBoardRequest
+import org.example.firstkopring.domain.board.presentation.dto.request.AddBoardRequest
 import org.example.firstkopring.domain.board.domain.repository.BoardRepository
 import org.springframework.stereotype.Service
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service
 class addBoardService(
     private val boardRepository: BoardRepository
 ) {
-    fun execute(addBoardRequest: addBoardRequest) {
+    fun execute(addBoardRequest: AddBoardRequest) {
         boardRepository.save(
             addBoardRequest.run {
                 Board(

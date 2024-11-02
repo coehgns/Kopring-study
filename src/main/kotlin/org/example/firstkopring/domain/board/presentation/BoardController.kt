@@ -1,7 +1,7 @@
 package org.example.firstkopring.domain.board.presentation
 
 import org.example.firstkopring.domain.board.domain.Board
-import org.example.firstkopring.domain.board.presentation.dto.request.addBoardRequest
+import org.example.firstkopring.domain.board.presentation.dto.request.AddBoardRequest
 import org.example.firstkopring.domain.board.sevice.DeleteBoardService
 import org.example.firstkopring.domain.board.sevice.GetAllBoardService
 import org.example.firstkopring.domain.board.sevice.GetBoardService
@@ -23,7 +23,7 @@ class BoardController(
     private val deleteBoardService: DeleteBoardService
 ) {
     @PostMapping
-    fun addBoard(@RequestBody addBoardRequest: addBoardRequest) {
+    fun addBoard(@RequestBody addBoardRequest: AddBoardRequest) {
         addBoardService.execute(addBoardRequest)
     }
 
