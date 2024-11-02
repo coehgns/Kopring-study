@@ -14,5 +14,6 @@ class ModifyBoardService(
             ?: throw RuntimeException("board not exception")
 
         board.modifyBoard(modifyBoardRequest.title, modifyBoardRequest.content)
+        boardRepository.save(board)
     }
 }
