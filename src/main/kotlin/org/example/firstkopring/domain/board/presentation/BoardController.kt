@@ -1,7 +1,7 @@
 package org.example.firstkopring.domain.board.presentation
 
 import org.example.firstkopring.domain.board.domain.Board
-import org.example.firstkopring.domain.board.presentation.dto.request.AddBoardRequest
+import org.example.firstkopring.domain.board.presentation.dto.request.BoardRequest
 import org.example.firstkopring.domain.board.presentation.dto.request.ModifyBoardRequest
 import org.example.firstkopring.domain.board.sevice.*
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -23,8 +23,8 @@ class BoardController(
     private val modifyBoardService: ModifyBoardService
 ) {
     @PostMapping
-    fun addBoard(@RequestBody addBoardRequest: AddBoardRequest) {
-        addBoardService.execute(addBoardRequest)
+    fun addBoard(@RequestBody boardRequest: BoardRequest) {
+        addBoardService.execute(boardRequest)
     }
 
     @GetMapping("/{id}")
