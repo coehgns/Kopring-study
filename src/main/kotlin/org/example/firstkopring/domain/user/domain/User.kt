@@ -1,10 +1,13 @@
 package org.example.firstkopring.domain.user.domain
 
+import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import jakarta.persistence.OneToMany
+import org.example.firstkopring.domain.board.domain.Board
 
 @Entity
 class User(
@@ -16,5 +19,8 @@ class User(
     val name: String,
 
     @Column(name = "age", nullable = false)
-    val age: Int
+    val age: Int,
+
+    @OneToMany(mappedBy = "user")
+    val boardList: List<Board>
 )
