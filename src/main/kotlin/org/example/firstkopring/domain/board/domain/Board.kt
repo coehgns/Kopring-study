@@ -1,10 +1,7 @@
 package org.example.firstkopring.domain.board.domain
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
+import jakarta.persistence.*
+import org.example.firstkopring.domain.user.domain.User
 
 @Entity
 class Board(
@@ -16,7 +13,11 @@ class Board(
     val title: String,
 
     @Column(name = "content", nullable = true)
-    val content: String
+    val content: String,
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    val user: User? = null
 ) {
     fun modifyBoard(title: String, content: String) {
         Board(
