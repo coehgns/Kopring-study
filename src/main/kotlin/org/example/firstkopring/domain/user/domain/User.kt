@@ -22,5 +22,5 @@ class User(
     val age: Int,
 
     @OneToMany(mappedBy = "user")
-    val boardList: List<Board>
+    val boardList: List<Board>? = null
 )
