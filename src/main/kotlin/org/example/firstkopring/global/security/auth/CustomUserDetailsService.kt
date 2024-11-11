@@ -6,9 +6,11 @@ import org.example.firstkopring.global.error.exception.BusinessException
 import org.example.firstkopring.global.error.exception.ErrorCode
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
+import org.springframework.stereotype.Component
 import org.springframework.stereotype.Service
 
 @Service
+@Component
 class CustomUserDetailsService(
     private val userRepository: UserRepository
 ): UserDetailsService {
