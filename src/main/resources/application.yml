@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/kotlin
     username: root
-    password: modooboiroo1766
+    password: ${DB_PASSWORD}
 
   jpa:
     hibernate:
@@ -13,3 +13,9 @@ spring:
       hibernate:
         show_sql: false
         format_sql: true
+jwt:
+  header: ${JWT_HEADER:Authorization}
+  prefix: ${JWT_PREFIX:Bearer}
+  secretKey: ${JWT_SECRET}
+  accessExpiration: ${JWT_ACCESS_EXP:3600}
+  refreshExpiration: ${JWT_REFRESH_EXP:3600}
