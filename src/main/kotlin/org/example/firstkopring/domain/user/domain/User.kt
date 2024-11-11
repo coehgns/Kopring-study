@@ -1,6 +1,5 @@
 package org.example.firstkopring.domain.user.domain
 
-import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -15,8 +14,8 @@ class User(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val Id: Long? = null,
 
-    @Column(name = "name", nullable = false)
-    val name: String,
+    @Column(name = "username", nullable = false)
+    val username: String,
 
     @OneToMany(mappedBy = "user")
     val boardList: List<Board>? = null
