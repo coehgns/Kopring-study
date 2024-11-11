@@ -18,9 +18,6 @@ class User(
     @Column(name = "name", nullable = false)
     val name: String,
 
-    @Column(name = "age", nullable = false)
-    val age: Int,
-
     @OneToMany(mappedBy = "user")
     val boardList: List<Board>? = null
 )
