@@ -1,6 +1,6 @@
 package org.example.firstkopring.global.security.auth
 
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User
+import org.example.firstkopring.domain.user.domain.User
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.AuthorityUtils
 import org.springframework.security.core.userdetails.UserDetails
@@ -10,7 +10,7 @@ class CustomUserDetails(
 ): UserDetails {
     override fun getAuthorities(): Collection<GrantedAuthority> = AuthorityUtils.createAuthorityList()
 
-    override fun getUsername(): String = user.name
+    override fun getUsername(): String = user.username
 
     override fun getPassword(): String = user.password
 
