@@ -2,9 +2,11 @@ package org.example.firstkopring.global.security.jwt
 
 import com.fasterxml.jackson.annotation.JsonFormat
 import org.springframework.boot.context.properties.ConfigurationProperties
+import org.springframework.stereotype.Component
 
+@Component
 @ConfigurationProperties(prefix = "jwt")
-data class JwtProperties(
+class JwtProperties(
     val header: String,
 
     val prefix: String,
