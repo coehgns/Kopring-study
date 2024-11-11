@@ -13,8 +13,8 @@ class SaveUserService(
         userRepository.save(
             saveUserRequest.run {
                 User(
-                    name = name,
-                    age = age
+                    username = username,
+                    password = password
                 )
             }
         )
