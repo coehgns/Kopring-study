@@ -17,6 +17,9 @@ class User(
     @Column(name = "username", nullable = false)
     val username: String,
 
+    @Column(name = "password", nullable = false)
+    val password: String,
+
     @OneToMany(mappedBy = "user")
     val boardList: List<Board>? = null
 )
