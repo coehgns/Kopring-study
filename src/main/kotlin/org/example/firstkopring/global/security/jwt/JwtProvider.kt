@@ -1,6 +1,5 @@
 package org.example.firstkopring.global.security.jwt
 
-import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import org.example.firstkopring.domain.auth.domain.RefreshToken
