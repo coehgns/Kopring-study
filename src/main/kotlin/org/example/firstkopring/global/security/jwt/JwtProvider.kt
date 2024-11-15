@@ -2,6 +2,7 @@ package org.example.firstkopring.global.security.jwt
 
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
+import jakarta.servlet.http.HttpServletRequest
 import org.example.firstkopring.domain.auth.domain.RefreshToken
 import org.example.firstkopring.domain.auth.domain.repository.RefreshTokenRepository
 import org.example.firstkopring.domain.auth.presentation.dto.response.TokenResponse
@@ -9,6 +10,7 @@ import org.example.firstkopring.domain.user.domain.repository.UserRepository
 import org.example.firstkopring.global.error.exception.BusinessException
 import org.example.firstkopring.global.error.exception.ErrorCode
 import org.springframework.stereotype.Component
+import org.springframework.util.StringUtils
 import java.util.Date
 
 @Component
@@ -90,5 +92,14 @@ class JwtProvider(
             accessTokenExpiredAt = Date(now.time + jwtProperties.accessExpiration),
             refreshTokenExpiredAt = Date(now.time + jwtProperties.refreshExpiration)
         )
+    }
+
+    fun resolveToken(request: HttpServletRequest): String? {
+        val bearerToken: String = request.getHeader(jwtProperties.header)
+        if(StringUtils.hasText(bearerToken) && bearerToken.startsWith(jwtProperties.prefix)) {
+            return bearerToken.substring(7)
+        }
+
+        return bearerToken
     }
 }
