@@ -21,7 +21,7 @@ class ModifyBoardService(
 
         val currentUser = userFacade.currentUser()
 
-        if(currentUser == board.user) {
+        if(currentUser != board.user) {
             throw BusinessException(ErrorCode.BOARD_AUTHOR_MISMATCH)
         }
 
