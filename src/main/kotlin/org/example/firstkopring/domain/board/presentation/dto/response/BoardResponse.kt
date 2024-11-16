@@ -9,7 +9,7 @@ data class BoardResponse(
     val content: String
 ) {
     companion object {
-        fun BoardResponse(board: Board): BoardResponse {
+        fun fromBoard(board: Board): BoardResponse {
             return BoardResponse(
                 user = board.user,
                 title = board.title,
