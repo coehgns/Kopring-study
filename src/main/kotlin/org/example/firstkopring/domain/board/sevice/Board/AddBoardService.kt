@@ -1,4 +1,4 @@
-package org.example.firstkopring.domain.board.sevice
+package org.example.firstkopring.domain.board.sevice.Board
 
 import org.example.firstkopring.domain.board.domain.Board
 import org.example.firstkopring.domain.board.domain.repository.BoardRepository
