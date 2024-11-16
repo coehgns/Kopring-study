@@ -7,12 +7,14 @@ import org.example.firstkopring.global.error.exception.BusinessException
 import org.example.firstkopring.global.error.exception.ErrorCode
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
 class ModifyBoardService(
     private val boardRepository: BoardRepository,
     private val userFacade: UserFacade
 ) {
+    @Transactional
     fun execute(id: Long, modifyBoardRequest: ModifyBoardRequest) {
         val board = boardRepository.findByIdOrNull(id)
             ?: throw BusinessException(ErrorCode.BOARD_NOT_FOUND)
@@ -24,6 +26,5 @@ class ModifyBoardService(
         }
 
         board.modifyBoard(modifyBoardRequest.title, modifyBoardRequest.content)
-        boardRepository.save(board)
     }
 }
