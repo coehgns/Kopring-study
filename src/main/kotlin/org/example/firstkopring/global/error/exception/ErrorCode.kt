@@ -6,6 +6,7 @@ enum class ErrorCode(
 ) {
     INVALID_TOKEN(401, "invalid token"),
     PASSWORD_MISMATCH(401, "password mismatch"),
+    BOARD_AUTHOR_MISMATCH(403, "Board author mismatch"),
     BOARD_NOT_FOUND(404, "board not found."),
     USER_NOT_FOUND(404, "user not found"),
     USER_ALREADY_EXISTS(409, "User Already Exists"),
