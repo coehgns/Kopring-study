@@ -1,9 +1,9 @@
 package org.example.firstkopring.domain.board.presentation
 
-import org.example.firstkopring.domain.board.domain.Board
 import org.example.firstkopring.domain.board.presentation.dto.request.BoardRequest
 import org.example.firstkopring.domain.board.presentation.dto.request.ModifyBoardRequest
-import org.example.firstkopring.domain.board.sevice.*
+import org.example.firstkopring.domain.board.presentation.dto.response.BoardResponse
+import org.example.firstkopring.domain.board.sevice.Board.*
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
@@ -28,10 +28,10 @@ class BoardController(
     }
 
     @GetMapping("/{id}")
-    fun getBoard(@PathVariable id: Long) : Board = getBoardService.execute(id)
+    fun getBoard(@PathVariable id: Long) : BoardResponse = getBoardService.execute(id)
 
     @GetMapping
-    fun getAllBoard() : List<Board> = getAllBoardService.execute()
+    fun getAllBoard() : List<BoardResponse> = getAllBoardService.execute()
 
     @DeleteMapping("/{id}")
     fun deleteBoard(@PathVariable id: Long) = deleteBoardService.execute(id)
