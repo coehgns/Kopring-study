@@ -14,10 +14,10 @@ class User(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val Id: Long? = null,
 
-    @Column(name = "username", nullable = false)
+    @Column(name = "username", nullable = false, unique = true)
     val username: String,
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "password", nullable = false, unique = true)
     val password: String,
 
     @OneToMany(mappedBy = "user")
