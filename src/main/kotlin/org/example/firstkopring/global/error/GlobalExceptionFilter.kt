@@ -30,7 +30,7 @@ class GlobalExceptionFilter(
         }
     }
 
-    fun writerErrorResponse(
+    private fun writerErrorResponse(
         response: HttpServletResponse,
         statusCode: Int,
         errorResponse: ErrorResponse,
