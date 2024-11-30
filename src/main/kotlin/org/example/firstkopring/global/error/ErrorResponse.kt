@@ -6,7 +6,6 @@ import org.example.firstkopring.global.error.exception.ErrorCode
 data class ErrorResponse(
     val message: String,
     val statusCode: Int,
-    val description: String,
 ) {
 
     companion object{
@@ -14,7 +13,6 @@ data class ErrorResponse(
             return ErrorResponse(
                 statusCode = errorCode.statusCode,
                 message = errorCode.message,
-                description = errorCode.message,
             )
         }
     }
