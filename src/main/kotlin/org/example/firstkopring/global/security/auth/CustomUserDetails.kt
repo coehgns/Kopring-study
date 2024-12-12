@@ -1,6 +1,6 @@
 package org.example.firstkopring.global.security.auth
 
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User
+import org.example.firstkopring.domain.user.domain.User
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
@@ -11,7 +11,7 @@ class CustomUserDetails(
 ): UserDetails {
 
     override fun getAuthorities(): MutableCollection<out GrantedAuthority> {
-        return Collections.singleton(SimpleGrantedAuthority(user.name))
+        return Collections.singleton(SimpleGrantedAuthority(username))
     }
 
     override fun getPassword(): String? {
@@ -19,7 +19,7 @@ class CustomUserDetails(
     }
 
     override fun getUsername(): String {
-        return user.name
+        return user.username
     }
 
     override fun isAccountNonExpired(): Boolean {
