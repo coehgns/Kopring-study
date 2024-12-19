@@ -8,5 +8,7 @@ class RefreshToken(
     @Id
     val accountId: String,
 
-    val token: String
+    val token: String,
+
+    val expiration: Long
 )
