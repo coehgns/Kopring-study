@@ -3,6 +3,7 @@ package org.example.firstkopring.global.security.jwt
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import io.jsonwebtoken.security.Keys
+import org.example.firstkopring.domain.auth.domain.RefreshToken
 import org.example.firstkopring.domain.auth.domain.repository.RefreshTokenRepository
 import org.example.firstkopring.global.security.auth.CustomUserDetailsService
 import org.springframework.stereotype.Component
@@ -17,6 +18,20 @@ class JwtProvider(
     fun createAccessToken(username: String): String {
         return createToken(username, "access", jwtProperties.accessExpiration)
     }
+
+    fun createRefreshToken(username: String): String {
+        val rfToken = createAccessToken(username)
+        refreshTokenRepository.save(
+            RefreshToken(
+                username = username,
+                token = rfToken,
+                expiration = jwtProperties.refreshExpiration * 1000
+            )
+        )
+
+        return rfToken
+    }
+
     private fun createToken(username: String, jwtType: String, exp: Long): String {
         return Jwts.builder()
             .signWith(Keys.hmacShaKeyFor(jwtProperties.secretKey.toByteArray()), SignatureAlgorithm.HS256)
