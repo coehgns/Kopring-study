@@ -14,6 +14,9 @@ class JwtProvider(
     private val customUserDetailsService: CustomUserDetailsService,
     private val jwtProperties: JwtProperties
 ) {
+    fun createAccessToken(username: String): String {
+        return createToken(username, "access", jwtProperties.accessExpiration)
+    }
     private fun createToken(username: String, jwtType: String, exp: Long): String {
         return Jwts.builder()
             .signWith(Keys.hmacShaKeyFor(jwtProperties.secretKey.toByteArray()), SignatureAlgorithm.HS256)
