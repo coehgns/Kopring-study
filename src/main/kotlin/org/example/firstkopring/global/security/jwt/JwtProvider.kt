@@ -10,4 +10,6 @@ class JwtProvider(
     private val customUserDetailsService: CustomUserDetailsService,
     private val jwtProperties: JwtProperties
 ) {
+
+    fun createToken(username: String, authority: Authority)
 }
