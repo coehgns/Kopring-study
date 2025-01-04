@@ -11,7 +11,7 @@ import org.springframework.data.redis.core.TimeToLive
 class RefreshToken(
     @Id
     @Column(name = "id", nullable = false, unique = true)
-    val accountId: String,
+    val username: String,
 
     @Column(name = "refresh_token", nullable = false)
     var token: String,
