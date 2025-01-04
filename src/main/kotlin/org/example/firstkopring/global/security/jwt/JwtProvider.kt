@@ -3,6 +3,7 @@ package org.example.firstkopring.global.security.jwt
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import io.jsonwebtoken.security.Keys
+import jakarta.servlet.http.HttpServletRequest
 import org.example.firstkopring.domain.auth.domain.RefreshToken
 import org.example.firstkopring.domain.auth.domain.repository.RefreshTokenRepository
 import org.example.firstkopring.global.security.auth.CustomUserDetailsService
@@ -40,5 +41,15 @@ class JwtProvider(
             .claim("type", jwtType)
             .setExpiration(Date(System.currentTimeMillis() + exp * 1000))
             .compact()
+    }
+
+    fun resolveToken(request: HttpServletRequest): String? {
+        val bearerToken = request.getHeader(jwtProperties.header)
+
+        if (bearerToken != null && bearerToken.startsWith(jwtProperties.header)) {
+            return bearerToken.substring(7)
+        }
+
+        return null
     }
 }
