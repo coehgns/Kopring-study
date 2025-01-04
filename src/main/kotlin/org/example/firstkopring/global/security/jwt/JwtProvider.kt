@@ -11,6 +11,9 @@ import org.example.firstkopring.domain.auth.domain.repository.RefreshTokenReposi
 import org.example.firstkopring.global.exception.InvalidTokenException
 import org.example.firstkopring.global.exception.TokenExpiredException
 import org.example.firstkopring.global.security.auth.CustomUserDetailsService
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+import org.springframework.security.core.Authentication
+import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.stereotype.Component
 import java.util.*
 
@@ -55,6 +58,11 @@ class JwtProvider(
         }
 
         return null
+    }
+
+    fun getAuthentication(token: String): Authentication {
+        val userDetails: UserDetails = customUserDetailsService.loadUserByUsername(getClaims(token).subject)
+        return UsernamePasswordAuthenticationToken(userDetails, "", userDetails.authorities)
     }
 
     private fun getClaims(token: String): Claims {
