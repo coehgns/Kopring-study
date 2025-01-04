@@ -14,9 +14,9 @@ class RefreshToken(
     val accountId: String,
 
     @Column(name = "refresh_token", nullable = false)
-    val token: String,
+    var token: String,
 
     @TimeToLive
     @Column(name = "token_expiration", nullable = false)
-    val expiration: Long
+    var expiration: Long
 )
