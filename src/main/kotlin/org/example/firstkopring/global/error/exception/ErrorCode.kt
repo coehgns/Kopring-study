@@ -5,6 +5,7 @@ enum class ErrorCode(
     val message: String,
 ) {
     INVALID_TOKEN(401, "invalid token"),
+    TOKEN_EXPIRED(401, "Token Expired"),
     PASSWORD_MISMATCH(401, "password mismatch"),
     BOARD_AUTHOR_MISMATCH(403, "Board author mismatch"),
     BOARD_NOT_FOUND(404, "board not found."),
