@@ -19,4 +19,9 @@ class RefreshToken(
     @TimeToLive
     @Column(name = "token_expiration", nullable = false)
     var expiration: Long
-)
+) {
+    fun updateToken(token: String, exp: Long) {
+        this.token = token
+        this.expiration = exp
+    }
+}
