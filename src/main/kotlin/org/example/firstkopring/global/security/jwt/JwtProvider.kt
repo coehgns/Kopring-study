@@ -8,8 +8,8 @@ import io.jsonwebtoken.security.Keys
 import jakarta.servlet.http.HttpServletRequest
 import org.example.firstkopring.domain.auth.domain.RefreshToken
 import org.example.firstkopring.domain.auth.domain.repository.RefreshTokenRepository
-import org.example.firstkopring.global.exception.InvalidTokenException
-import org.example.firstkopring.global.exception.TokenExpiredException
+import org.example.firstkopring.domain.auth.exception.InvalidTokenException
+import org.example.firstkopring.domain.auth.exception.TokenExpiredException
 import org.example.firstkopring.global.security.auth.CustomUserDetailsService
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.Authentication
