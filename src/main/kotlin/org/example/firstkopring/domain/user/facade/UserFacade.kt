@@ -4,6 +4,7 @@ import org.example.firstkopring.domain.auth.exception.PasswordMissmatchException
 import org.example.firstkopring.domain.user.domain.User
 import org.example.firstkopring.domain.user.domain.repository.UserRepository
 import org.example.firstkopring.domain.user.exception.UserAlreadyExistException
+import org.example.firstkopring.domain.user.exception.UserNotFoundException
 import org.example.firstkopring.global.error.exception.BusinessException
 import org.example.firstkopring.global.error.exception.ErrorCode
 import org.springframework.security.core.context.SecurityContextHolder
@@ -33,5 +34,10 @@ class UserFacade(
         if (passwordEncoder.matches(user.password, password)) {
             throw PasswordMissmatchException
         }
+    }
+
+    fun findByUsername(username: String): User {
+        return userRepository.findByUsername(username)
+            ?: throw UserNotFoundException
     }
 }
