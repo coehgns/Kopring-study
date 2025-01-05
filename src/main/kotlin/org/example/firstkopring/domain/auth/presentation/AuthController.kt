@@ -32,7 +32,7 @@ class AuthController(
         return loginService.execute(request)
     }
 
-    @PostMapping("re-issue")
+    @PostMapping("/re-issue")
     fun reissue(@RequestBody request: ReissueRequest): TokenResponse {
         return tokenRefreshService.execute(request)
     }
