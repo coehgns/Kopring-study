@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component
 import java.util.*
 
 @Component
-class JwtProvider(
+class JwtTokenProvider(
     private val refreshTokenRepository: RefreshTokenRepository,
     private val customUserDetailsService: CustomUserDetailsService,
     private val jwtProperties: JwtProperties
