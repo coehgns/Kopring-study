@@ -19,7 +19,7 @@ class User(
     var username: String,
 
     @Column(name = "password", nullable = false, unique = true)
-    val password: String,
+    var password: String,
 
     @OneToMany(mappedBy = "user")
     val boardList: List<Board>? = null
