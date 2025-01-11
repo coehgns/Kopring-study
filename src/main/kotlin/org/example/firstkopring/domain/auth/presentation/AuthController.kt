@@ -2,7 +2,7 @@ package org.example.firstkopring.domain.auth.presentation
 
 import org.example.firstkopring.domain.auth.presentation.dto.request.LoginRequest
 import org.example.firstkopring.domain.auth.presentation.dto.request.ReissueRequest
-import org.example.firstkopring.domain.auth.presentation.dto.request.SignupRequest
+import org.example.firstkopring.domain.auth.presentation.dto.request.SignUpRequest
 import org.example.firstkopring.domain.auth.presentation.dto.response.TokenResponse
 import org.example.firstkopring.domain.auth.service.LoginService
 import org.example.firstkopring.domain.auth.service.SignUpService
@@ -23,7 +23,7 @@ class AuthController(
 ) {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/signup")
-    fun signup(@RequestBody request: SignupRequest): TokenResponse {
+    fun signup(@RequestBody request: SignUpRequest): TokenResponse {
         return signupService.execute(request)
     }
 

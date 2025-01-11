@@ -1,6 +1,6 @@
 package org.example.firstkopring.domain.auth.service
 
-import org.example.firstkopring.domain.auth.presentation.dto.request.SignupRequest
+import org.example.firstkopring.domain.auth.presentation.dto.request.SignUpRequest
 import org.example.firstkopring.domain.auth.presentation.dto.response.TokenResponse
 import org.example.firstkopring.domain.user.domain.User
 import org.example.firstkopring.domain.user.domain.repository.UserRepository
@@ -18,7 +18,7 @@ class SignUpService(
     private val userFacade: UserFacade
 ) {
     @Transactional
-    fun execute(request: SignupRequest): TokenResponse {
+    fun execute(request: SignUpRequest): TokenResponse {
         userFacade.checkUserExist(request.username)
 
         val user = userRepository.save(
