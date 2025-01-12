@@ -12,7 +12,7 @@ import org.example.firstkopring.domain.board.domain.Board
 class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "user_id", nullable = false)
     val Id: Long,
 
     @Column(name = "username", nullable = false, unique = true)
