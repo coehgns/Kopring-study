@@ -22,5 +22,5 @@ class User(
     var password: String,
 
     @OneToMany(mappedBy = "user")
-    val boardList: List<Board>? = null
+    val boardList: List<Board> = ArrayList()
 )
