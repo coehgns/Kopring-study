@@ -7,6 +7,7 @@ import org.example.firstkopring.domain.user.exception.UserAlreadyExistException
 import org.example.firstkopring.domain.user.exception.UserNotFoundException
 import org.example.firstkopring.global.error.exception.BusinessException
 import org.example.firstkopring.global.error.exception.ErrorCode
+import org.springframework.data.repository.findByIdOrNull
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Component
@@ -38,6 +39,11 @@ class UserFacade(
 
     fun findByUsername(username: String): User {
         return userRepository.findByUsername(username)
+            ?: throw UserNotFoundException
+    }
+
+    fun findByUserId(userid: Long): User {
+        return userRepository.findByIdOrNull(userid)
             ?: throw UserNotFoundException
     }
 }
