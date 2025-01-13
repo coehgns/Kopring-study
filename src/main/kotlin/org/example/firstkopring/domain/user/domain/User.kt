@@ -10,7 +10,7 @@ class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id", nullable = false)
-    val Id: Long,
+    val Id: Long = 0,
 
     @Column(name = "username", nullable = false, unique = true)
     var username: String,
