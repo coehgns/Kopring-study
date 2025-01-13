@@ -5,6 +5,7 @@ import org.example.firstkopring.domain.board.domain.Board
 import org.example.firstkopring.domain.user.domain.enums.Authority
 
 @Entity
+@Table(name = "user_tbl")
 class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
