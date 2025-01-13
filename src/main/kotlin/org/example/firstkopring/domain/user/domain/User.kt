@@ -1,12 +1,8 @@
 package org.example.firstkopring.domain.user.domain
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.OneToMany
+import jakarta.persistence.*
 import org.example.firstkopring.domain.board.domain.Board
+import org.example.firstkopring.domain.user.domain.enums.Authority
 
 @Entity
 class User(
@@ -22,5 +18,9 @@ class User(
     var password: String,
 
     @OneToMany(mappedBy = "user")
-    val boardList: List<Board> = ArrayList()
+    val boardList: List<Board> = ArrayList(),
+
+    @Column(nullable = false)
+    @Enumerated(value = EnumType.STRING)
+    var authority: Authority
 )
