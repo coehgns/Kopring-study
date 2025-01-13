@@ -24,4 +24,8 @@ class User(
     @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     var authority: Authority
-)
+) {
+    fun changePassword(newPassword: String) {
+        password = newPassword
+    }
+}
